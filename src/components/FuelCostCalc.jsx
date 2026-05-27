@@ -119,18 +119,18 @@ const FuelCostCalc = () => {
         </div>
         <div className="text-sm ml-5 font-medium">
           <h className="flex text-black font-semibold">Fuel Calculator by State</h>
-          <div className="grid grid-cols-2">
-            <div className="mt-4 mr-4 flex flex-col">
-              <h className="bg-white border-2  border-gray-300 p-1   shadow-sm rounded-3xl text-teal-600">Kampala Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Mukono Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Jinja Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Wakiso Calculator</h><br/>
+          <div className="grid grid-cols-2 gap-6 w-full">
+            <div className="mt-4 mr-4 flex flex-col w-full">
+              <h className="bg-white border-2  border-gray-300 p-1 md:text-xs   shadow-sm rounded-3xl text-teal-600">Kampala Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs    shadow-sm rounded-3xl  text-teal-600">Mukono Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs   shadow-sm rounded-3xl  text-teal-600">Jinja Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs  shadow-sm rounded-3xl  text-teal-600">Wakiso Calculator</h><br/>
             </div>
             <div className="mt-4 ml-4 flex flex-col">
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Gulu Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Arua Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Kasese Calculator</h><br/>
-              <h className="bg-white border-2 border-gray-300 p-1   shadow-sm rounded-3xl  text-teal-600">Hoima Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs  shadow-sm rounded-3xl  text-teal-600">Gulu Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs  shadow-sm rounded-3xl  text-teal-600">Arua Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs  shadow-sm rounded-3xl  text-teal-600">Kasese Calculator</h><br/>
+              <h className="bg-white border-2 border-gray-300 p-1 md:text-xs  shadow-sm rounded-3xl  text-teal-600">Hoima Calculator</h><br/>
             </div>
           </div>
         </div>

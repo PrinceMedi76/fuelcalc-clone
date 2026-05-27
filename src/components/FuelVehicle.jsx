@@ -91,15 +91,15 @@ const FuelVehicle = () => {
             <h className="text-sm text-gray-400">Vehicle<br/><span className="font-bold text-black">Custom vehicle</span><br/>8 L/100km.60L tank</h>
             <IoIosArrowDown className="text-sm text-gray-400"/>
           </div>
-          <div className="flex justify-between">
-            <div className="text-gray-500 font-medium mb-3 text-xs border-2 border-gray-300 bg-gray-300 rounded-3xl p-3">
+          <div className="flex max-w-md mx-auto w-fit">
+            <div className="text-gray-500 font-mono mr-5 grid grid-cols-2 text-xs border-2 border-gray-300 bg-gray-300 rounded-2xl p-3">
               <h className="flex">Fuel economy</h><br/>
-              <input type="number" placeholder="number" className="pl-1 border-none"/>
+              <input type="number" placeholder="number" className="pl-1 outline-none"/>
               <span>L/100km</span>
             </div>
-            <div className="text-gray-500 font-medium mb-3 text-xs border-2 border-gray-300 bg-gray-300 rounded-3xl p-3">
+            <div className="text-gray-500 font-mono grid grid-cols-2 text-xs border-2 border-gray-300 bg-gray-300 rounded-2xl p-3">
               <h className="flex">Tank size</h><br/>
-              <input type="number" placeholder="number" className="pl-1 border-none"/>
+              <input type="number" placeholder="number" className="pl-1 outline-none"/>
               <span>L</span>
             </div>
           </div>

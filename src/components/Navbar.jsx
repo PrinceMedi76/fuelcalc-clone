@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-green-700 text-white relative p-6">
+      <nav className="bg-green-700 text-white fixed w-full top-0 left-0 z-50  p-6">
         <div className="flex top-5 left-5 gap-3">
             <LuFuel className="size-6"/>
             <h1 className=" font-extrabold text-amber-50" >Fuel
