@@ -3,7 +3,7 @@ import { GoDash } from "react-icons/go";
 const InsideFooter = () => {
   return (
     <>
-        <div className="mb-30 justify-center bg-green-950 p-3">
+        <div className="mb-0 justify-center bg-green-950 p-3">
             <div className="flex justify-center">
               <h className="text-xs text-gray-400">&copy; 2026 <span className="font-medium text-white">fuelcalc.com.ug</span></h>
               <GoDash />

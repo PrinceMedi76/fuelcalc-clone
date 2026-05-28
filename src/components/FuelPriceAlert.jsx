@@ -18,14 +18,14 @@ const FuelPriceAlert = () => {
                     <label className="flex text-gray-400 text-sm">Email</label><br/>
                     <input className="rounded-2xl text-black border-2 border-gray-300 p-2" type="email" placeholder="your@email.com"/>
                 </div>
-                <div className="flex gap-2 m-4">
+                <div className="flex flex-col-1 gap-2 m-2">
                     <div>
-                        <label className="pr-30 text-sm text-gray-400">State</label><br/>
-                        <input className="rounded-2xl w-40 text-black border-2 border-gray-300 p-2" type="text"/>
+                        <label className="pr-25 ml-4 text-xs text-gray-400">State</label><br/>
+                        <input className="rounded-2xl w-32 text-black border-2 border-gray-300 p-1" type="text"/>
                     </div>
                     <div>
-                        <label className="mr-25 text-sm text-gray-400">Fuel Type</label><br/>
-                        <input className="rounded-2xl w-40 text-black border-2 border-gray-300 p-2" type="text"/>
+                        <label className="mr-10 text-xs text-gray-400">Fuel Type</label><br/>
+                        <input className="rounded-2xl w-32 text-black border-2 border-gray-300 p-1" type="text"/>
                     </div>
                 </div>
                 <div className="text-left ml-4 text-gray-500 text-sm">
@@ -33,7 +33,7 @@ const FuelPriceAlert = () => {
                     <span>$<input className="rounded-2xl w-32 m-2 text-black border-2 border-gray-300 p-2" type="number" placeholder="2.00"/>/L</span>
                 </div>
                 <div>
-                    <button className="rounded-2xl w-90 text-white bg-teal-800 border border-gray-300 p-2" type="submit">Set Up Alert</button>
+                    <button className="rounded-2xl w-70 lg:w-full text-white bg-teal-800 border border-gray-300 p-2" type="submit">Set Up Alert</button>
                 </div>
                 <p className="text-xs mt-2 text-gray-500">Free. No spam. Unsubscribe anytime</p>
             </div>
