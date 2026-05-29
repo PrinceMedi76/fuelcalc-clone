@@ -7,7 +7,7 @@ const Log = () => {
   return (
     <>
       <div onClick={() => setOpen(!open)} className="bg-white border-2 relative border-gray-300 p-3   shadow-sm rounded-3xl m-5 mt-0 mb-5 text-teal-600">
-        <LuFuel className=" absolute left-5 top-4 size-4 mr-2 mt-1"/>
+        <LuFuel className=" absolute left-5 top-2 size-4 mr-2 mt-1"/>
         <div>
           <h1 className="text-sm text-gray-600 font-semibold">Log a Fill up</h1>
           <h2 className="text-xs text-gray-400">Enter receipt details to calculate your real economy</h2>

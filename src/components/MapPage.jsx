@@ -6,7 +6,7 @@ const MapPage = () => {
   return (
     <div className="flex flex-col-1 min-h-screen">
       <Navbar/>
-      <div className="mt-20 relative m-0  z-0 flex-1"><Map/></div>
+      <div className="mt-20 relative m-2 mb-20  z-0 flex-1"><Map/></div>
       <Footer/>
     </div>
   )
