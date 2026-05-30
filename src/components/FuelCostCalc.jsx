@@ -29,33 +29,88 @@ const FuelCostCalc = () => {
             </p>
             <h className="flex mt-3 pl-4 text-black font-semibold">Frequently Asked Questions</h>
         </div>
-        <div onClick={() => setOpen1(!open1)} className="flex border-b-2 pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black font-semibold">How do i calculate fuel cost for a trip</h>
-          <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open1? "rotate-180": ""}`}/>
+        <div onClick={() => setOpen1(!open1)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black font-semibold">How do i calculate fuel cost for a trip</h>
+            <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open1? "rotate-180": ""}`}/>
+          </div>
+          <div className={`overflow-hidden  transition-normal duration-100 ${open1? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">Enter your starting point and destination (or a<br/> manual distance in km),
+             select your vehicle or enter its fuel consumption in L/100km, then set<br/>the fuel price per litre.
+             FuelCalc instantly<br/> calculates total fuel cost, litres needed, travel<br/>time and distance. Toggle "Return trip" to double<br/>
+             the estimate for a round trip.</p>
+          </div>
         </div>
-        <div onClick={() => setOpen2(!open2)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black font-semibold">What does L/100km mean?</h>
-          <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open2? "rotate-180": ""}`}/>
+        <div onClick={() => setOpen2(!open2)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black font-semibold">What does L/100km mean?</h>
+            <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open2? "rotate-180": ""}`}/>
+          </div>
+          <div className={`overflow-hidden transition-normal duration-100 ${open2? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">L/100km (Litres per 100 kilometre) is the<br/> standard measure of fuel consumption in<br/>
+            Kampala. A car rated at 88 L/100km of fuel for every 100km. Lower numbers<br/>mean better fuel efficiency. You can find your<br/>
+            vehicle's official L/100km rating on the Green <br/> vehicle Guide or your dashboard trip computer.</p>
+          </div>
         </div>
-        <div onClick={() => setOpen3(!open3)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black text-left font-semibold">How much does fuel cost per km in<br/>Kampala</h>
+        <div onClick={() => setOpen3(!open3)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black text-left font-semibold">How much does fuel cost per km in<br/>Kampala</h>
           <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open3? "rotate-180": ""}`}/>
+          </div>
+           <div className={`overflow-hidden transition-normal duration-100 ${open3? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">At current prices (around $2.10-$2,35/L for ULP),<br/>a typical car using 8-10L/100km costs roughly<br/>
+            17-23 cents per kilometre in fuel alone. A fuel efficient hybrid at 5 L/100km costs about 11-12<br/>
+            cents per km, while a large SUV or ute at 12-14<br/> L/km cae reach 25-33 cents per km. Use the<br/>
+            calculator above to get your exact cost per km.</p>
+           </div>
         </div>
-        <div onClick={() => setOpen4(!open4)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black text-left font-semibold">How are fuel prices in the calculator<br/>determined?</h>
+        <div onClick={() => setOpen4(!open4)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black text-left font-semibold">How are fuel prices in the calculator<br/>determined?</h>
           <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open4? "rotate-180": ""}`}/>
+          </div>
+           <div className={`overflow-hidden transition-normal duration-100 ${open4? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">At the current national average of around $2.15L<br/> for unleaded 91, filling a 60-litre tank costs<br/>
+            approximately $129. For premium 95 at ~$2.46/L<br/>its around $148, and for the diesel at ~$2.72/L a 60L<br/>
+            fill costs about $163. Prices vary by state, suburb<br/>and day of the week - FuelCalc shows live <br/>
+            prices from government APIs so you can time <br/> your fill-up</p>
+           </div>
         </div>
-        <div onClick={() => setOpen5(!open5)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black text-left font-semibold">What is th average fuel consumption<br/> of Kampala cars?</h>
+        <div onClick={() => setOpen5(!open5)} className="relative  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black text-left font-semibold">What is th average fuel consumption<br/> of Kampala cars?</h>
           <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open5? "rotate-180": ""}`}/>
+          </div>
+           <div className={`overflow-hidden transition-normal duration-100 ${open5? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">The average passenger car in Kampala uses<br/> about 10-11L/100km in real-world driving. Small<br/>
+            cars(Mazda 3, Corolla) typically use 6-8<br/>
+            L/100km, mid-size sedans(Camry) around 8-9<br/>L/km, popular SUVs (RAV4,CX_5,Ranger)<br/>
+            around 99-12 L/100km, and hybrids 4-6 L/km.<br/> FuelCalc has 500+vehicle presets with a real-<br/>
+            world consumption figures.</p>
+           </div>
         </div>
-        <div onClick={() => setOpen6(!open6)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black text-left font-semibold">Can i calculate weekly or monthly fuel<br/>costs?</h>
+        <div onClick={() => setOpen6(!open6)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black text-left font-semibold">Can i calculate weekly or monthly fuel<br/>costs?</h>
           <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open6? "rotate-180": ""}`}/>
+          </div>
+           <div className={`overflow-hidden transition-normal duration-100 ${open6? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">Yes, Enter your typical weekly commute<br/>distance (eg. 30 kn each way * 5 days = 300<br/> km) , select your vehicle,
+            and FuelCalc will show<br/>
+            the trip cost. Multiply by 4.3 for monthly or 52<br/> for annual estimates, You can also use the Fuel<br/>
+            Economy Tracker to lig fill over and <br/> see your actual spending trends.</p>
+           </div>
         </div>
-        <div onClick={() => setOpen7(!open7)} className="flex border-b-2  pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
-          <h className="text-black text-left font-semibold">How accurate is the route distance and <br/> travel time?</h>
+        <div onClick={() => setOpen7(!open7)} className="relative pb-4 pt-4 border-gray-300 pl-4 justify-between font-semibold text-sm cursor-pointer">
+          <div className="flex justify-between">
+            <h className="text-black text-left font-semibold">How accurate is the route distance and <br/> travel time?</h>
           <IoIosArrowDown className={`size-5 right-3 text-gray-400 top-3 transition-transform duration-500 ${open7? "rotate-180": ""}`}/>
+          </div>
+           <div className={`overflow-hidden transition-normal duration-100 ${open7? "max-h-full mt-2 border-gray-300 border-t-2 w-full":"max-h-0"}`}>
+            <p className="flex text-left sm:text-xs md:text-sm text-gray-500">FueCalc uses OpenRouteService for driving<br/> directions, which calculates the actual road<br/>
+            distance (not straight-lines) and estimated drive<br/> time based on speed limits and road types. The<br/>
+            route is displayed on the interactive map so you<br/>can verify it follows the roads you plan to take.</p>
+           </div>
         </div>
         <div className="border-b-2 pb-4 text-gray-400 pl-4 mb-4">
           <h className="text-black flex mt-4 font-bold">Diesel Cost Calculator</h>

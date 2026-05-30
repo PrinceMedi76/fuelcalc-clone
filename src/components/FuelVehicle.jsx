@@ -116,13 +116,13 @@ const FuelVehicle = () => {
             <p className="mt-2 flex font-normal text-xs text-gray-500">Hover for full name.affects price lookup</p>
           </div>
           <div className="bg-white border-2 border-gray-300 p-3 flex-col shadow-sm rounded-3xl m-5 text-teal-600">
-            {see && (<div className=" text-white font-mono absolute bottom-13  ml-50 bg-gray-800/95 p-6 rounded-3xl pr-30">
+            {see && (<div className=" text-white font-mono absolute right-4  ml-50 bg-gray-800/95 p-6 rounded-3xl pr-30">
                 {states.map((state)=>(
                   <button key={state} onClick={()=> {
                     setSelected(state);
                     SetSee(false)
                   }}
-                  className="flex items-center gap-4 w-full">{selected=== state?(<FaCheck className="size-3" />):("")}{state}</button>
+                  className="flex items-center gap-4 w-full">{selected=== state?(<FaCheck className="size-2" />):("")}{state}</button>
                 ))}
               </div>)}
             <h className="flex text-gray-400">Fuel Price</h>
@@ -131,10 +131,10 @@ const FuelVehicle = () => {
               <p className="text-black font-bold text-lg pt-3">{fuelPrice.toFixed(1)}<span className="ml-3 text-xs text-gray-400">cents/litre</span></p>
               <button onClick={()=>setFuelPrice(prev => prev + 0.1)} className="border-0 bg-gray-300 text-gray-900 p-3 rounded-b-lg rounded-t-lg ml-3 mt-2" type="button"><GoPlus /></button>
             </div>
-            <p className="text-gray-400 font-semibold text-sm pt-2">=$<span className="mr-2">{(fuelPrice/100)}</span>per litre</p>
+            <p className="text-gray-400 font-semibold text-sm pt-2">=$<span className="mr-2">{(fuelPrice/100).toFixed(2)}</span>per litre</p>
             <div className="flex justify-center">
               <p className="text-gray-400 font-semibold pt-2">Average<span className="ml-2 text-xs text-gray-950">{button}</span></p>
-              <button onClick={()=> SetSee(!see)} className=" ml-3 border-0 bg-gray-300 text-gray-700 p-1 pr-3 rounded-b-lg rounded-t-lg mt-2 text-xs font-semibold">{selected}</button> 
+              <button onClick={()=> SetSee(!see)} className=" ml-3 border-0 bg-green-300 text-gray-700 p-1 pr-3 rounded-b-lg rounded-t-lg mt-2 text-xs font-semibold">{selected}</button> 
             </div>
           </div>
           <div className="bg-white border-2 border-gray-300 p-3 flex-col shadow-sm rounded-3xl m-5 text-teal-600">
