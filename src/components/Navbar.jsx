@@ -2,6 +2,7 @@
 import { useState } from "react";
 import {FaBars,FaRegMoon, FaTimes} from "react-icons/fa"
 import { LuFuel } from "react-icons/lu"
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   const [sidebar,setSidebar] = useState(false)
@@ -12,7 +13,7 @@ const Navbar = () => {
         <div className="flex top-5 left-5 gap-3">
             <LuFuel className="size-6"/>
             <h1 className=" font-extrabold text-amber-50" >Fuel
-                <span className="text-red-600">Calc</span></h1>
+                <span className="text-red-600">Me</span><span className="text-yellow-600">UG</span></h1>
         </div>
       
       <div className="absolute top-7 right-20">
@@ -25,9 +26,9 @@ const Navbar = () => {
     {sidebar && (
       <div className="bg-emerald-950 pl-6 pt-6 pb-6 font-sans mt-0 fixed top-18 left-0 h-screen w-227.5 z-40">
       <div className="mr-0 flex flex-col items-start">
-        <h1 className="pb-2">Fuel Economy</h1>
-        <h1 className="pb-2">My Fuel Log</h1>
-        <h1 className="pb-2">Wholesale Prices</h1>
+        <h1 disabled className="pb-2">Fuel Economy</h1>
+        <h1 disabled className="pb-2">My Fuel Log</h1>
+        <Link to="/wholesales" className="pb-2">Wholesale Prices</Link>
         <div className="ml-1 m-3">
           <ul className="font-medium flex flex-col items-start border-l pl-6">
           <li>Why Prices Changed</li>
