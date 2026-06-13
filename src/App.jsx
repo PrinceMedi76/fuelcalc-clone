@@ -8,6 +8,7 @@ import FuelVehicle from './components/FuelVehicle'
 import Log from './components/Log'
 import InsideFooter from './components/InsideFooter'
 import FuelPriceAlert from './components/FuelPriceAlert'
+import Wholesales from './components/Wholesales'
 
 const App = () => {
   return (
@@ -29,6 +30,14 @@ const App = () => {
         <MapPage/>
         <Footer/>
         </>}/>
+        <Route path='Wholesales' element={
+           <>
+            <Navbar/>
+            <Wholesales/>
+            <InsideFooter/>
+          </>
+        }>
+        </Route>
     </Routes>
   )
 }

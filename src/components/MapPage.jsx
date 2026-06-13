@@ -3,6 +3,7 @@ import Footer from "../components/Footer"
 import Map from "../components/Map"
 
 const MapPage = () => {
+
   return (
     <div className="flex flex-col-1 min-h-screen">
       <Navbar/>

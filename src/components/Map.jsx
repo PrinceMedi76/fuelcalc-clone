@@ -1,24 +1,52 @@
 import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css'
+import "leaflet-routing-machine"
+import RoutingMachine from './RoutingMachine'
+import { useLocation } from "react-router-dom"
+import L from 'leaflet'
+import markerIcon from '../images/location.png'
+import "leaflet/dist/leaflet.css"
 
 
 const Map = () => {
+  const location = useLocation();
+  const { coordinates } = location.state || {};
+
+  const customIcon = new L.icon({
+    iconUrl: markerIcon,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  });
+
   return (
-        <MapContainer
-        center={[25.2048,55.2708]}
+       <>
+          <MapContainer
+        center={[coordinates.start[0], coordinates.start[1]]}
         zoom={13}
         scrollWheelZoom={true}
-        className='h-full w-full  '>
+        className='h-full w-full'>
             <TileLayer
             attribution='&copy; OpenStreetMap'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[25.2048,55.27708]}>
+                <>
+                   <Marker position={coordinates.start} icon={customIcon}>
                 <Popup>
-                    Dubai Location
+                    Starting Location
                 </Popup>
             </Marker>
+            <Marker position={coordinates.end} icon={customIcon}>
+                <Popup>
+                    end Location
+                </Popup>
+            </Marker>
+                </>
+            
+                <RoutingMachine start={coordinates.start} end={coordinates.end}/>
         </MapContainer>
+       </>
+        
   )
 }
 

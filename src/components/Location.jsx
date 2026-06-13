@@ -1,9 +1,58 @@
 import { IoIosAdd } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom"
 
 const Location = () => {
   const [activeTab,setActiveTab] = useState("manual")
+  const [startLocation,setStartLocation] = useState("")
+  const [endLocation,setEndLocation] = useState("")
+  const navigate = useNavigate()
+  const [coordinates,setCoordinates] = useState(null)
+
+  const getCurrentLocation = () =>{
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((position)=>{
+        setStartLocation(`${position.coords.latitude},${position.coords.longitude}`)
+      },()=>{
+        alert("Unable to fetch current location. Please allow location access and try again.")
+      })
+    }
+  }
+
+
+  const getCoordinates = async (location)=>{
+    const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${location}&format=json`);
+    const data = await response.json();
+    if(data.length > 0){
+      return [
+        parseFloat(data[0].lat),
+        parseFloat(data[0].lon),
+      ]
+    }
+    return null;
+  };
+    
+  const handleRoute = async () =>{
+    const start = await getCoordinates(startLocation)
+    const end = await getCoordinates(endLocation)
+    if(start || end){
+      setCoordinates({
+        start,
+        end
+      })
+      navigate("/map",{
+        state: {
+          coordinates: {
+            start,
+            end,
+          }
+        }
+      })
+    }else{
+      alert(" Please check the locations and try again.")
+    }
+  }
 
   return (
     <>
@@ -20,19 +69,22 @@ const Location = () => {
             <CiLocationOn className="text-2xl flex absolute mt-4" />
             <div className="flex flex-col items-start ml-20">
                 <label className="block">Starting location</label><br/>
-            <input type="text" placeholder="city or address" className="items-center shadow-olive-800 pl-3 max-w-md"/>
+            <input type="text" value={startLocation} onChange={(e) => setStartLocation(e.target.value)} placeholder="city or address" className="items-center shadow-olive-800 pl-3 max-w-md outline-1"/>
+            <button className="bg-blue-500 text-white p-1 rounded-xl text-xs m-2" type="submit" onClick={getCurrentLocation}>
+              Use Current Location
+            </button>
             </div>
         </div>
         <div className="border mb-3 rounded-2xl p-2 items-start gap-3 w-full max-w-2xl relative">
             <CiLocationOn className="text-2xl flex absolute mt-4"/>
            <div className="flex flex-col items-start ml-20">
              <label>Destination</label><br/>
-            <input type="text" placeholder="city or address" className="items-center shadow-olive-800 pl-2" />
+            <input type="text" value={endLocation} onChange={(e) => setEndLocation(e.target.value)} placeholder="city or address" className="items-center shadow-olive-800 pl-2" />
            </div>
         </div>
         <div>
-            <button className="border-dashed border rounded-2xl pl-22 pr-22 pt-2 pb-2 justify-center text-sm flex  sm:w-64 m-4 ml-10 sm:ml-5 text-center">
-                <IoIosAdd className="size-5 "/>Add Stop
+            <button onClick={handleRoute} className="border-dashed border rounded-2xl pl-22 pr-22 pt-2 pb-2 justify-center text-sm flex  sm:w-64 m-4 ml-10 sm:ml-5 text-center">
+                <IoIosAdd className="size-5 "/>handle Route
             </button>
         </div>
         </>
